@@ -1,0 +1,22 @@
+<div class="signup-container">
+  <h2>Sign Up</h2>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Username</mat-label>
+    <input matInput [(ngModel)]="username" placeholder="Choose a username" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Password</mat-label>
+    <input matInput [(ngModel)]="password" placeholder="Create a password" type="password" />
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="signup()">Sign Up</button>
+
+  <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+
+  <div class="login-option">
+    <p>Already have an account?</p>
+    <button mat-stroked-button color="accent" (click)="goToLogin()">Login </button>
+  </div>
+</div>

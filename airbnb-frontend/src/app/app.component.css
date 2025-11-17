@@ -1,0 +1,29 @@
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1976d2; /* Material Azure Blue */
+  color: white;
+  padding: 1rem 2rem;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+nav button {
+  color: black !important; /* Make Home button text black */
+  background-color: white; /* Optional: white background */
+  border-radius: 6px;
+  padding: 0.4rem 1rem;
+}
+
+nav button:hover {
+  background-color: #e3e3e3; /* Slight hover effect */
+}
+
+.app-main {
+  padding: 2rem;
+}

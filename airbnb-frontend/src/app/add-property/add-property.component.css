@@ -1,0 +1,40 @@
+.add-property-container {
+  max-width: 900px;
+  margin: auto;
+  padding: 16px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.amenities {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.photo-upload input {
+  margin-bottom: 8px;
+}
+
+.previews img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+}
+
+.buttons {
+  margin-top: 16px;
+  display: flex;
+  gap: 16px;
+}

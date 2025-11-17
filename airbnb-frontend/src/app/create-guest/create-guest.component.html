@@ -1,0 +1,67 @@
+<div class="create-guest-container">
+  <h2>Create Profile</h2>
+
+  <form (ngSubmit)="createGuest()" #guestForm="ngForm">
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Name</mat-label>
+      <input
+        matInput
+        name="name"
+        [(ngModel)]="guest.name"
+        placeholder="Enter your name"
+        required
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Email</mat-label>
+      <input
+        matInput
+        name="email"
+        [(ngModel)]="guest.email"
+        placeholder="Enter your email"
+        type="email"
+        required
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Phone</mat-label>
+      <input
+        matInput
+        name="phone"
+        [(ngModel)]="guest.phone"
+        placeholder="Enter phone number"
+        type="text"
+        required
+        pattern="[0-9]*"
+        minlength="10"
+/>
+
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Address</mat-label>
+      <textarea
+        matInput
+        name="address"
+        [(ngModel)]="guest.address"
+        placeholder="Enter your address"
+        required
+      ></textarea>
+    </mat-form-field>
+
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="!guestForm.valid"
+    >
+      Submit
+    </button>
+  </form>
+
+  <p class="success" *ngIf="message">{{ message }}</p>
+  <p class="error" *ngIf="error">{{ error }}</p>
+</div>
+

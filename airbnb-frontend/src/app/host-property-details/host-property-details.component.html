@@ -1,0 +1,102 @@
+<div class="property-details-container" *ngIf="property">
+  <h2>Edit Property 🏠</h2>
+
+  <!-- Title -->
+  <mat-form-field class="full-width">
+    <mat-label>Title</mat-label>
+    <input matInput [(ngModel)]="property.title" required />
+  </mat-form-field>
+
+  <!-- Description -->
+  <mat-form-field class="full-width">
+    <mat-label>Description</mat-label>
+    <textarea matInput [(ngModel)]="property.description" required></textarea>
+  </mat-form-field>
+
+  <!-- Property Type -->
+  <mat-form-field class="full-width">
+    <mat-label>Property Type</mat-label>
+    <mat-select [(ngModel)]="property.propertyType">
+      <mat-option value="HOUSE">House</mat-option>
+      <mat-option value="HOTEL">Hotel</mat-option>
+      <mat-option value="FARM">Farm</mat-option>
+      <mat-option value="GUEST_HOUSE">Guest House</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <!-- Max Guests, Bedrooms, Beds, Bathrooms -->
+  <div class="row">
+    <mat-form-field><mat-label>Max Guests</mat-label><input matInput type="number" [(ngModel)]="property.maxGuests"/></mat-form-field>
+    <mat-form-field><mat-label>Bedrooms</mat-label><input matInput type="number" [(ngModel)]="property.bedrooms"/></mat-form-field>
+    <mat-form-field><mat-label>Beds</mat-label><input matInput type="number" [(ngModel)]="property.beds"/></mat-form-field>
+    <mat-form-field><mat-label>Bathrooms</mat-label><input matInput type="number" [(ngModel)]="property.bathrooms"/></mat-form-field>
+  </div>
+
+  <!-- Amenities -->
+  <div class="amenities">
+    <mat-checkbox [(ngModel)]="property.wifi">WiFi</mat-checkbox>
+    <mat-checkbox [(ngModel)]="property.airConditioner">Air Conditioner</mat-checkbox>
+    <mat-checkbox [(ngModel)]="property.parking">Parking</mat-checkbox>
+    <mat-checkbox [(ngModel)]="property.swimmingPool">Swimming Pool</mat-checkbox>
+  </div>
+
+  <!-- Address -->
+  <mat-form-field class="full-width"><mat-label>Address</mat-label><input matInput [(ngModel)]="property.address"/></mat-form-field>
+  <div class="row">
+    <mat-form-field><mat-label>City</mat-label><input matInput [(ngModel)]="property.city"/></mat-form-field>
+    <mat-form-field><mat-label>Country</mat-label><input matInput [(ngModel)]="property.country"/></mat-form-field>
+  </div>
+
+  <!-- Prices -->
+  <div class="row">
+    <mat-form-field>
+      <mat-label>Weekday Price</mat-label>
+      <div matPrefix>₹&nbsp;</div>
+      <input matInput type="number" [(ngModel)]="property.weekdayPrice" (ngModelChange)="calculateHostEarnings()" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Weekend Price</mat-label>
+      <div matPrefix>₹&nbsp;</div>
+      <input matInput type="number" [(ngModel)]="property.weekendPrice" (ngModelChange)="calculateHostEarnings()" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Host Earning Weekday</mat-label>
+      <div matPrefix>₹&nbsp;</div>
+      <input matInput type="number" [(ngModel)]="property.hostEarningWeekday" readonly />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Host Earning Weekend</mat-label>
+      <div matPrefix>₹&nbsp;</div>
+      <input matInput type="number" [(ngModel)]="property.hostEarningWeekend" readonly />
+    </mat-form-field>
+  </div>
+
+  <!-- Photo Upload -->
+  <div class="photo-upload">
+    <input type="file" (change)="onFilesSelected($event)" multiple />
+    <div class="previews">
+      <img *ngFor="let url of previewUrls" [src]="url" alt="Preview" />
+    </div>
+    <div class="existing-photos">
+      <img *ngFor="let url of fetchedImages" [src]="url" alt="Existing" />
+    </div>
+  </div>
+
+  <!-- Buttons -->
+  <div class="buttons">
+    <button mat-raised-button color="primary" (click)="updateProperty()" [disabled]="loading">
+      {{loading ? 'Updating...' : 'Update Property'}}
+    </button>
+
+     <button mat-raised-button color="warn" (click)="requestDeleteProperty()" [disabled]="loading">
+    Request Delete
+  </button>
+  
+    <button mat-raised-button color="warn" (click)="goBack()">Back</button>
+  </div>
+
+  <p *ngIf="message">{{message}}</p>
+</div>

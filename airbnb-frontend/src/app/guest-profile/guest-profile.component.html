@@ -1,0 +1,14 @@
+<div class="profile-container" *ngIf="guest">
+  <h2>👤Profile</h2>
+  <p><strong>Name:</strong> {{ guest.name }}</p>
+  <p><strong>Email:</strong> {{ guest.email }}</p>
+  <p><strong>Phone:</strong> {{ guest.phone }}</p>
+  <p><strong>Address:</strong> {{ guest.address }}</p>
+<button mat-raised-button color="primary" (click)="goBack()">⬅ Back to Dashboard</button>
+</div>
+
+<div *ngIf="!guest">
+  <p>Loading profile...</p>
+</div>
+
+

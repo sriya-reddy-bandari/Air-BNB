@@ -1,0 +1,95 @@
+.details-container {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* ---------- MAIN IMAGE ---------- */
+.main-image {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+/* ---------- THUMBNAILS ---------- */
+.thumbnail-list {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.thumbnail {
+  width: 110px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  border: 2px solid transparent;
+}
+
+.thumbnail:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+  border-color: #3f51b5;
+}
+
+/* ---------- DETAILS SECTION ---------- */
+.details-card {
+  margin-top: 25px;
+}
+
+.details-card h2 {
+  margin-bottom: 6px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.details-card p {
+  margin: 6px 0;
+  font-size: 16px;
+}
+
+/* ---------- BUTTONS ---------- */
+.button-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+  gap: 12px;
+}
+
+button[mat-raised-button] {
+  padding: 8px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+}
+
+.back-btn {
+  background-color: #777;
+}
+
+.book-btn {
+  background-color: #4caf50;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+  .main-image {
+    height: 250px;
+  }
+
+  .thumbnail {
+    width: 90px;
+    height: 65px;
+  }
+
+  .details-card h2 {
+    font-size: 20px;
+  }
+}

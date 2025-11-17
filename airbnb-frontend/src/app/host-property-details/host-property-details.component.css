@@ -1,0 +1,126 @@
+/* HostPropertyComponent.css */
+
+/* Container for all properties */
+.host-properties-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Heading */
+.host-properties-container h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Loading & message styles */
+.loading, .message {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* Property list grid */
+.property-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Individual property card */
+.property-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  width: 280px;
+  text-align: left;
+  cursor: pointer;
+  background-color: #fff;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Hover effect */
+.property-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+/* Property images */
+.property-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* Property title */
+.property-card h3 {
+  font-size: 18px;
+  color: #222;
+  margin: 0;
+}
+
+/* Property type / details */
+.property-card p {
+  font-size: 14px;
+  color: #555;
+  margin: 0;
+}
+
+/* Back button */
+.back-btn {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.back-btn button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Property details page */
+.property-details-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.property-details-container h2 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.property-details-container p {
+  margin: 5px 0;
+  color: #555;
+}
+
+.property-details-container ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.property-details-container ul li {
+  margin-bottom: 5px;
+}
+
+/* Property photos gallery */
+.property-details-container .photos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.property-details-container .photos img {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}

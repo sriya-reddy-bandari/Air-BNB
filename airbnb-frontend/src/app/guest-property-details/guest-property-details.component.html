@@ -1,0 +1,48 @@
+<div *ngIf="property" class="details-container">
+
+  <!-- IMAGES -->
+  <div class="images-wrapper">
+    <img *ngFor="let img of fetchedImages" [src]="img" class="property-img" alt="no pic"/>
+  </div>
+
+  <h2>{{ property.title }}</h2>
+  <h3> {{property.description}}</h3>
+
+  <p><strong>City:</strong> {{ property.city }}</p>
+  <p><strong>Address:</strong> {{ property.address }}</p>
+  <p><strong>Bedrooms:</strong> {{ property.bedrooms }}</p>
+  <p><strong>Beds:</strong> {{ property.beds }}</p>
+  <p><strong>Guests Allowed:</strong> {{ property.maxGuests }}</p>
+
+  <p><strong>Weekday Price:</strong> ₹{{ property.weekdayPrice }}</p>
+  <p><strong>Weekend Price:</strong> ₹{{ property.weekendPrice }}</p>
+  
+  <h4>Amenities:</h4>
+
+  <div class="amenities-list">
+
+    <p *ngIf="property.wifi">
+      <strong>Wifi:</strong> Available
+    </p>
+
+    <p *ngIf="property.airConditioner">
+      <strong>Air Conditioner:</strong> Available
+    </p>
+
+    <p *ngIf="property.parking">
+      <strong>Parking:</strong> Available
+    </p>
+
+    <p *ngIf="property.swimmingPool">
+      <strong>Swimming Pool:</strong> Available
+    </p>
+
+  </div>
+  <button class="book-now-btn" (click)="bookNow(property.id)">
+  Book Now
+</button>
+
+<button mat-raised-button color="warn" (click)="goBack()">Back</button>
+
+</div>
+

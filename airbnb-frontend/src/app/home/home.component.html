@@ -1,0 +1,31 @@
+
+<div class="home-container">
+  <h1>{{ title }}</h1>
+
+  <section class="about">
+    <h2>About Us</h2>
+    <p>{{ aboutText }}</p>
+  </section>
+
+  <section class="features">
+    <h2>Our Features</h2>
+    <ul>
+      <li *ngFor="let feature of features">{{ feature }}</li>
+    </ul>
+  </section>
+
+    <section class="get-started">
+    <h2>Get Started</h2>
+    <p>Select your role above to login or sign up.</p>
+  </section>
+
+   <section class="how-it-works">
+    <h2>How It Works</h2>
+    <ul>
+      <li><strong>Hosts</strong> can list their properties and manage bookings easily.</li>
+      <li><strong>Guests</strong> can search and book their favorite stays.</li>
+    </ul>
+  </section>
+
+</div>
+

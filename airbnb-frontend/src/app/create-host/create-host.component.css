@@ -1,0 +1,37 @@
+.create-host-container {
+  width: 420px;
+  margin: 50px auto;
+  padding: 25px;
+  border-radius: 12px;
+  background-color: #fafafa;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.create-host-container h2 {
+  text-align: center;
+  color: #1976d2;
+  margin-bottom: 20px;
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.success {
+  color: green;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.error {
+  color: red;
+  text-align: center;
+  margin-top: 10px;
+}

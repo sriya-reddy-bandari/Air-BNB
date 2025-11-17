@@ -1,0 +1,25 @@
+<div *ngIf="bookings.length; else noBookings">
+  <div *ngFor="let booking of bookings" class="booking-card">
+    <h4>{{ booking.propertyTitle }} ({{ booking.propertyCity }}, {{ booking.propertyCountry }})</h4>
+    <p>Check-in: {{ booking.checkInDate }} | Check-out: {{ booking.checkOutDate }}</p>
+    <p>Status: {{ booking.status }}</p>
+
+    <!-- Show guest info if the user is a host -->
+    <div *ngIf="userRole === 'host'">
+      <p>Guest: {{ booking.guestName }} | Phone: {{ booking.guestPhone }} | Email: {{ booking.guestEmail }}</p>
+    </div>
+
+    <!-- Show host info if the user is a guest -->
+    <div *ngIf="userRole === 'guest'">
+      <p>Host: {{ booking.hostName }} | Phone: {{ booking.hostPhone }} | Email: {{ booking.hostEmail }}</p>
+    </div>
+
+    <button mat-raised-button color="primary" (click)="viewPropertyDetails(booking.propertyId)">
+      View Property Details
+    </button>
+  </div>
+</div>
+
+<ng-template #noBookings>
+  <p>No bookings found.</p>
+</ng-template>

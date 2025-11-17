@@ -1,0 +1,56 @@
+.host-properties-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+  font-family: Arial, sans-serif;
+}
+
+.loading {
+  font-weight: bold;
+  margin: 20px 0;
+  text-align: center;
+}
+
+.property-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.property-card {
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-align: center;
+  background-color: #fff;
+}
+
+.property-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.property-card img {
+  height: 180px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.property-card h3 {
+  margin: 10px 0 5px 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.property-card p {
+  margin: 0 0 10px 0;
+  color: #555;
+  font-size: 14px;
+}
+
+.back-btn {
+  margin-top: 20px;
+  text-align: center;
+}

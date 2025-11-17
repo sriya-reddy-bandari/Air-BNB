@@ -1,0 +1,20 @@
+<div class="host-properties-container">
+  <h2>Properties</h2>
+
+  <div *ngIf="loading" class="loading">Loading properties...</div>
+  <div *ngIf="message">{{ message }}</div>
+
+  <div class="property-list">
+    <button class="property-card" *ngFor="let property of properties"
+            (click)="viewPropertyDetails(property.id)">
+      <img [src]="getImage(property)" alt="{{ property.title }}" />
+
+      <h3>{{ property.title }}</h3>
+      <p><strong>Type:</strong> {{ property.propertyType }}</p>
+    </button>
+  </div>
+
+  <div class="back-btn">
+    <button mat-raised-button color="primary" (click)="goBack()">Back to Dashboard</button>
+  </div>
+</div>

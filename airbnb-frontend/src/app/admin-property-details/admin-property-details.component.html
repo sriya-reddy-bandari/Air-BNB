@@ -1,0 +1,20 @@
+<div *ngIf="loading">Loading...</div>
+
+<div *ngIf="!loading">
+  <h2>Property Details</h2>
+
+  <p><strong>Title:</strong> {{ property.title }}</p>
+  <p><strong>Type:</strong> {{ property.propertyType }}</p>
+  <p><strong>City:</strong> {{ property.city }}</p>
+  <p><strong>Status:</strong> {{ property.status }}</p>
+
+  <h3>Images</h3>
+  <div class="image-container">
+    <img *ngFor="let img of images" [src]="img" class="property-image" alt="no pic" />
+  </div>
+
+  <button (click)="approve()">Approve</button>
+  <button (click)="reject()">Reject</button>
+  <button (click)="goBack()">Back</button>
+</div>
+

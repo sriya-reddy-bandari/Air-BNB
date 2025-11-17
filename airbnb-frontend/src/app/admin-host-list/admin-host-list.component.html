@@ -1,0 +1,42 @@
+<div class="host-list-container">
+      <h2>Hosts</h2>
+      <table mat-table [dataSource]="hosts" class="mat-elevation-z8" *ngIf="hosts.length; else loadingTpl">
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef> ID </th>
+          <td mat-cell *matCellDef="let host">{{ host.id }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef> Name </th>
+          <td mat-cell *matCellDef="let host">{{ host.name }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef> Email </th>
+          <td mat-cell *matCellDef="let host">{{ host.email }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="phone">
+          <th mat-header-cell *matHeaderCellDef> Phone </th>
+          <td mat-cell *matCellDef="let host">{{ host.phone }}</td>
+        </ng-container>
+
+         <ng-container matColumnDef="address">
+          <th mat-header-cell *matHeaderCellDef> Address </th>
+          <td mat-cell *matCellDef="let host">{{ host.address }}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+
+      <ng-template #loadingTpl>
+        <p *ngIf="loading">Loading hosts...</p>
+        <p *ngIf="!loading && !hosts.length">No hosts found.</p>
+      </ng-template>
+
+
+      <div class="buttons">
+    <button mat-raised-button color="warn" (click)="goBack()">Back</button>
+  </div>
+    </div>
